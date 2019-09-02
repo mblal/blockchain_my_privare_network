@@ -1,0 +1,25 @@
+{
+  "name": "mbl_blockchain_private_network",
+  "version": "1.0.0",
+  "description": "First blockchain dev",
+  "main": "server.js",
+  "scripts": {
+    "linter": "./node_modules/.bin/eslint .",
+    "linter:fix": "./node_modules/.bin/eslint . --fix"
+  },
+  "author": "Mohamed BLAL",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^18.3.2",
+    "bitcoinjs-lib": "^4.0.3",
+    "bitcoinjs-message": "^2.0.0",
+    "body-parser": "^1.18.3",
+    "crypto-js": "3.1.9-1",
+    "hex2ascii": "^0.0.3",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.3.0",
+    "eslint-plugin-react": "^7.14.3"
+  }
+}
