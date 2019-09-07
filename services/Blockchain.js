@@ -120,7 +120,7 @@ class Blockchain {
             let messageTime = parseInt(message.split(':')[1]);
             let currentTime = parseInt(new Date().getTime().toString().slice(0, -3));
             // if the message has been got less than 5 minutes ago, continue
-            if (currentTime - messageTime > 300 ){
+            if (currentTime - messageTime < 300 ){
                 let bool = bitcoinMessage.verify(message, address, signature);
                 if (bool){
                     let block = new BlockClass.Block({data: 
@@ -207,10 +207,10 @@ class Blockchain {
             self.chain.forEach(async (block) => {
                 bool1 = await block.validate();
                 if (block.height > 0)
-                bool2 = block.previousBlockHash === SHA256(self.chain[self.height - 1].body);
+                bool2 = block.previousBlockHash === self.chain[self.height - 1].hash;
 
                 if (!bool1 || !bool2) {
-                    errorLog.push(`Block ${self.height} has been tampered`);
+                    resolve(errorLog.push(`Block ${self.height} has been tampered`));
                 }
                 
             });
