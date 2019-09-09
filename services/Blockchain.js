@@ -72,7 +72,7 @@ class Blockchain {
            }
             block.time = Date.now();
             block.height = self.height;
-            block.hash = SHA256(block.body).toString();
+            block.hash = SHA256(JSON.stringify(block)).toString();
             try{
                 self.chain.push(block);
                 resolve(block);
@@ -210,10 +210,11 @@ class Blockchain {
                 bool2 = block.previousBlockHash === self.chain[self.height - 1].hash;
 
                 if (!bool1 || !bool2) {
-                    resolve(errorLog.push(`Block ${self.height} has been tampered`));
+                    errorLog.push(`Block ${self.height} has been tampered`);
                 }
                 
             });
+            resolve(errorLog);
         });
     }
 
