@@ -1,4 +1,4 @@
-1 - To retrieve a block by a given position (Heigh)
+# 1 - To retrieve a block by a given position (Heigh)
 
 Install and launch Postman
 
@@ -14,7 +14,7 @@ RESULT :
     "previousBlockHash": null
 }
 
-2- Generate message 
+# 2- Generate message 
 
 Verb : POST
 Query : http://localhost:8000/requestValidation
@@ -29,7 +29,7 @@ Result :
 n21mdKho1HYz7WUX9ej3ZGeafwLQwzuehz:1568061757:starRegistry
 
 
-3 - To submit star - Save star in the ledger-
+# 3 - To submit star - Save star in the ledger-
 
 Verb : POST
 Query : http://localhost:8000/submitstar
@@ -57,7 +57,7 @@ Result :
     "previousBlockHash": "21bc5480e18ae2134f78e4d55590c5e0ce207ef8d16dc444ae9b88020bacc90d"
 }
 
-4- To retrieve block by a given hash
+# 4- To retrieve block by a given hash
 
 Verb : GET
 Query : http://localhost:8000/block/hash/5836384fb9115b60ee612d00dfe93b3c7292009cd87385342e0fd8a33f3f43f3
@@ -81,7 +81,7 @@ Result :
     "previousBlockHash": "1ea0eb88731b06feb8f0b58630b14ff6c816378249acaa982e6dc24f4bce9565"
 }
 
-5- To Get stars by addresses (given owner)
+# 5- To Get stars by addresses (given owner)
 
 Verb : GET
 Query : http://localhost:8000/blocks/n21mdKho1HYz7WUX9ej3ZGeafwLQwzuehz
